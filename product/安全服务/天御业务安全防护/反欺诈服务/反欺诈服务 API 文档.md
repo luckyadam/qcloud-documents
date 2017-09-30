@@ -7,107 +7,108 @@
 以下请求参数列表仅列出了接口请求参数，正式调用时需要加上公共请求参数，见[公共请求参数](https://www.qcloud.com/document/product/295/7279)页面。其中，此接口的Action字段为AntiFraud。
 <br>注意：以下每一个参数对于识别恶意都非常重要，任何参数的缺少都有可能影响识别效果 。
 <table class="t">
-<th><b>参数名称</b>
+<th colspan="2">参数名称</b>
 </th><th> <b>类型</b>
 </th><th> <b>描述</b>
 </th></tr>
-<tr> <td colspan="3">基本字段：共有五项，要求至少选择两项</td>
+<tr> <td colspan="4">基本字段：共有五项，要求至少选择两项</td>
 </tr>
 <tr>
-<td> idNumber
+<td colspan="2"> idNumber
 </td><td> String
 </td><td> 身份证号
 </td></tr>
 <tr>
-<td> phoneNumber
+<td colspan="2"> phoneNumber
 </td><td> String
 </td><td> 手机号码：国家代码
 <br> 手机号，如0086-15912345678
 <br> 注意0086前不需要+号
 </td></tr>
 <tr>
-<td> bankCardNumber
+<td colspan="2"> bankCardNumber
 </td><td> String
 </td><td> 银行卡号
 </td></tr>
 <tr>
-<td> userIp
+<td colspan="2"> userIp
 </td><td> String
 </td><td> 用户请求来源IP
 </td></tr>
 <tr>
-<td rowspan="2"> imei <br> idfa
-</td><td> String
+<td rowspan="2">设备字段</td>
+<td>imei</td>
+<td> String
 </td><td> imei 国际移动用户识别码 
 </td></tr>
-<tr><td> String
+<tr><td>imei</td><td> String
 </td><td> idfa ios系统广告标示符
 </td></tr>
-<tr> <td colspan="3">其他可选字段</td>
+<tr> <td colspan="4">其他可选字段</td>
 </th></tr>
 </td></tr>
 <tr>
-<td> scene
+<td colspan="2"> scene
 </td><td> Uint
 </td><td> 业务场景ID， 0：借贷（默认值） 1：支付
 </td></tr>
 <tr>
-<td> name
+<td colspan="2"> name
 </td><td> String
 </td><td> 姓名(注意：使用中文参与鉴权签名)
 </td></tr>
 <tr>
-<td> emailAddress
+<td colspan="2"> emailAddress
 </td><td> String
 </td><td> 用户邮箱地址
 </td></tr>
 <tr>
-<td> address
+<td colspan="2"> address
 </td><td> String
 </td><td> 用户住址
 </td></tr>
 <tr>
-<td> mac
+<td colspan="2"> mac
 </td><td> String
 </td><td> MAC地址
 </td></tr>
 <tr>
-<td> imsi
+<td colspan="2"> imsi
 </td><td> String
 </td><td> 国际移动用户识别码
 </td></tr>
 <tr>
-<td> accountType
+<td colspan="2"> accountType
 </td><td> UInt
 </td><td> 关联的腾讯帐号1：QQ开放帐号 2：微信开放帐号
 </td></tr>
 <tr>
-<td> uid
+<td colspan="2"> uid
 </td><td> String
 </td><td> 可选的QQ或微信openid
 </td></tr>
 <tr>
-<td> appId
+<td colspan="2"> appId
 </td><td> String
 </td><td> qq或微信分配网站或应用的appid，用来唯一标识网站或应用
 </td></tr>
 <tr>
-<td> wifiMac
+<td colspan="2"> wifiMac
 </td><td> String
 </td><td> wifimac
 </td></tr>
 <tr>
-<td> wifiSSID
+<td colspan="2"> wifiSSID
 </td><td> String
 </td><td> WIFI服务集标识
 </td></tr>
 <tr>
-<td> wifiBSSID
+<td colspan="2"> wifiBSSID
 </td><td> String
 </td><td> WIFI-BSSID
 </td></tr>
 <tr>
-<td> businessId
+<td colspan="2"> businessId
 </td><td> String
 </td><td> 业务ID，在多个业务中使用此服务，通过此ID区分统计数据
 </td></tr>
@@ -324,7 +325,7 @@ RiskDetail类型说明
 </td></tr></tbody></table>
 
 ## 4.示例代码
-代码下载：  [Python示例](https://mc.qcloudimg.com/static/archive/a8b291becf06c9fefab003f6afc16509/AntiFraud.py.zip) [PHP示例](https://mc.qcloudimg.com/static/archive/06397c265ae2dc364f2f47559125ce5b/AntiFraud.php.zip) [Java示例](https://mc.qcloudimg.com/static/archive/70b700e34e982822af2a020454185a8d/AntiFraud.zip) [.Net示例](https://mc.qcloudimg.com/static/archive/05c3d0f6edbcd297502ab7407e91275b/AntiFraud.zip)
+代码下载：  [Python示例](https://mc.qcloudimg.com/static/archive/a8b291becf06c9fefab003f6afc16509/AntiFraud.py.zip) [PHP示例](https://mc.qcloudimg.com/static/archive/06397c265ae2dc364f2f47559125ce5b/AntiFraud.php.zip) [Java示例](https://mc.qcloudimg.com/static/archive/70b700e34e982822af2a020454185a8d/AntiFraud.zip) [.Net示例](https://mc.qcloudimg.com/static/archive/05c3d0f6edbcd297502ab7407e91275b/AntiFraud.zip)
 
 一个完整的请求需要两类请求参数：公共请求参数和接口请求参数。这里只列出了接口请求参数，并未列出公共请求参数，有关公共请求参数的说明可见[公共请求参数](https://www.qcloud.com/document/product/295/7279)小节。
 ```
@@ -353,3 +354,5 @@ https://csec.api.qcloud.com/v2/index.php?Action=AntiFraud
 　]
 }
 ```
+
+
